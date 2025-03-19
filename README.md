@@ -49,7 +49,6 @@ devops-final-exam/
 │── app.py             # Flask app
 │── Dockerfile         # Docker build file
 │── docker-compose.yml # Multi-container setup
-│── k8s/               # Kubernetes YAML manifests
 │── requirements.txt   # Python dependencies
 │── tests/             # Pytest test cases
 │── .github/workflows/ # CI/CD pipeline
