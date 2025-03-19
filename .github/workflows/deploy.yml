@@ -38,9 +38,10 @@ jobs:
         run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: 🏗️ Build & Push Docker Image
-        run: |
-          docker tag ${{ secrets.DOCKER_USERNAME }}/flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+  run: |
+    docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-app .
+    docker tag ${{ secrets.DOCKER_USERNAME }}/flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+    docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
   deploy:
     name: 🚀 Deploy to Server
