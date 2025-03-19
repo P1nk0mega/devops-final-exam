@@ -173,6 +173,6 @@ Then, open a **Pull Request (PR)** on GitHub.
 ---
 
 ## 🔗 **Contributors**
-- **Your Name** - [GitHub](https://github.com/P1nk0mega)
+- **Elijus.K** - [GitHub](https://github.com/P1nk0mega)
 
 ---
