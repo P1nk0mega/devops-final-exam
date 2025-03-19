@@ -130,7 +130,3 @@ python -m unittest discover tests
 👤 **Elijus.K**  
 📧 elijus1997@gmail.com  
 💼 [LinkedIn] https://www.linkedin.com/in/elijus-kučikas-1a1061176/
-
----
-
-🚀 **This README file contains everything needed for your DevOps exam submission!** 🔥
