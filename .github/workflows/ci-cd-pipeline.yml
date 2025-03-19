@@ -53,7 +53,7 @@ jobs:
       - name: Start Flask App in Background
         run: |
           python app.py &
-          sleep 5  # Give the app time to start
+          sleep 5  # Wait for the app to start
 
       - name: Run Tests
         run: pytest tests/
@@ -74,6 +74,6 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t elijus/devops-flask-app .
-          docker tag elijus/devops-flask-app elijus/devops-flask-app:latest
-          docker push elijus/devops-flask-app:latest
+          docker build -t yourdockerhubusername/devops-flask-app .
+          docker tag yourdockerhubusername/devops-flask-app:latest
+          docker push yourdockerhubusername/devops-flask-app:latest
