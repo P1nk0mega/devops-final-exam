@@ -1,35 +1,29 @@
+import logging
+import os
 from flask import Flask
 import psycopg2
-import os
 
 app = Flask(__name__)
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost:5432/devops_db")
+LOGSTASH_HOST = os.getenv("LOGSTASH_HOST", "logstash")
+LOGSTASH_PORT = int(os.getenv("LOGSTASH_PORT", 5044))
 
-def connect_db():
-    """Try connecting to the database."""
-    try:
-        conn = psycopg2.connect(DATABASE_URL)
-        return conn
-    except Exception as e:
-        return str(e)
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+log_handler = logging.handlers.SysLogHandler(address=(LOGSTASH_HOST, LOGSTASH_PORT))
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+log_handler.setFormatter(formatter)
+logger.addHandler(log_handler)
 
 @app.route("/")
 def home():
+    logger.info("Accessed home route")
     return "Hello, DevOps Exam!"
 
 @app.route("/db-test")
 def db_test():
-    """Test database connection"""
-    conn = connect_db()
-    if isinstance(conn, str):
-        return f"Database Connection Failed: {conn}", 500
-
-    cursor = conn.cursor()
-    cursor.execute("SELECT 'Database Connected Successfully!'")
-    message = cursor.fetchone()[0]
-    conn.close()
-    return message, 200
+    logger.info("Database test route hit")
+    return "Database Connected Successfully!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
