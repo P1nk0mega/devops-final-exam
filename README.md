@@ -1,9 +1,6 @@
 # 🚀 DevOps Final Exam - Flask App  
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/P1nk0mega/devops-final-exam/ci-cd-pipeline.yml?label=CI/CD&style=flat-square)  
-![Docker Image Size](https://img.shields.io/docker/image-size/elijus/devops-flask-app/latest?style=flat-square)  
-![License](https://img.shields.io/github/license/P1ink0mega/devops-final-exam?style=flat-square)  
-
 ---
 
 ## 📌 Overview
