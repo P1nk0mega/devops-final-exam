@@ -1,16 +1,13 @@
-
 FROM python:3.9
 
 WORKDIR /app
 
-COPY . .
-
-RUN pip install --upgrade pip
-RUN pip install flask psycopg2-binary
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+RUN adduser --disabled-password appuser
+USER appuser
 
-ENV PYTHONUNBUFFERED=1
+COPY . .
 
 CMD ["python", "app.py"]

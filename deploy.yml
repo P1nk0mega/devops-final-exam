@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - name: Pull and restart containers
+      command: docker-compose up -d --build
