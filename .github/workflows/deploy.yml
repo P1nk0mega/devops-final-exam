@@ -39,8 +39,8 @@ jobs:
 
       - name: 🏗️ Build & Push Docker Image
         run: |
-          docker tag ${{ secrets.DOCKER_USERNAME }}/flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          docker tag ${{ secrets.DOCKER_USERNAME }}/flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:lv1.14
+          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:v1.14
 
   deploy:
     name: 🚀 Deploy to Server
